@@ -8,7 +8,6 @@ import Chart from "./Chart";
 import AirConditions from "./AirConditions";
 import { fetchWeather, fetchForecast } from "../api/weather";
 
-// مسیرهای بک‌گراند بر اساس تصاویر موجود
 import bgCloudy from '../assets/images/bg-cloudy.png';
 import bgRain from '../assets/images/bg-rain.png';
 import bgSnow from '../assets/images/bg-snow.png';
@@ -17,8 +16,8 @@ import bgLightning from '../assets/images/bg-Lightning.png';
 import bgWeather1 from '../assets/images/bg-weather1.png';
 import bgWeather2 from '../assets/images/bg-moon.png';
 
-const bgClear = bgWeather1; // آفتابی
-const bgDefault = bgWeather2; // پیش‌فرض
+const bgClear = bgWeather1; 
+const bgDefault = bgWeather2; 
 
 const Weather = () => {
   const [background, setBackground] = useState(bgDefault);
@@ -29,7 +28,6 @@ const Weather = () => {
   const [city, setCity] = useState("Tehran");
   const [inputCity, setInputCity] = useState("");
 
-  // تابع کمکی برای انتخاب بک‌گراند
   const getBackground = (main) => {
     switch (main) {
       case "Clear":
@@ -62,7 +60,6 @@ const Weather = () => {
         setWeatherData(weather);
         setForecastData(forecast);
         setLoading(false);
-        // انتخاب بک‌گراند بر اساس وضعیت آب‌وهوا
         if (weather.weather && weather.weather[0].main) {
           setBackground(getBackground(weather.weather[0].main));
         } else {
