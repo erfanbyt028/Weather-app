@@ -18,8 +18,7 @@ const MoonPhase = ({ city = "tehran" }) => {
   const [percent, setPercent] = useState(50);
 
   useEffect(() => {
-    // هر بار که شهر تغییر کند، درصد جدید تصادفی تولید کن
-    const randomPercent = 10 + Math.floor(Math.random() * 81); // 10 تا 90
+    const randomPercent = 10 + Math.floor(Math.random() * 81); 
     setPercent(randomPercent);
   }, [city]);
 
